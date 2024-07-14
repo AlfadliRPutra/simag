@@ -13,3 +13,7 @@ Route::get('/admin', function () {
 Route::get('/admin/intern', function () {
     return view('admin.intern');
 });
+
+Route::get('/admin/dokumen', function () {
+    return view('admin.dokumen');
+});

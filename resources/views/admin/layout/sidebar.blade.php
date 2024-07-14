@@ -57,12 +57,17 @@
               <ul class="nav nav-collapse">
                 <li>
                   <a href="components/avatars.html">
-                    <span class="sub-item">Hadir</span>
+                    <span class="sub-item">Hari Ini</span>
                   </a>
                 </li>
                 <li>
                   <a href="components/buttons.html">
-                    <span class="sub-item">Tidak hadir</span>
+                    <span class="sub-item">Riwayat</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="components/avatars.html">
+                    <span class="sub-item">Ringkasan</span>
                   </a>
                 </li>
               </ul>

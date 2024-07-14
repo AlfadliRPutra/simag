@@ -32,7 +32,7 @@
         <nav
           class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex"
         >
-          <div class="input-group">
+          {{-- <div class="input-group">
             <div class="input-group-prepend">
               <button type="submit" class="btn btn-search pe-1">
                 <i class="fa fa-search search-icon"></i>
@@ -43,7 +43,8 @@
               placeholder="Search ..."
               class="form-control"
             />
-          </div>
+          </div> --}}
+          <h2>SIMAG WITEL JAMBI</h2>
         </nav>
 
         <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
@@ -345,29 +346,23 @@
                   <div class="user-box">
                     <div class="avatar-lg">
                       <img
-                        src="assets/img/profile.jpg"
+                        src="/img/profile.png"
                         alt="image profile"
                         class="avatar-img rounded"
                       />
                     </div>
                     <div class="u-text">
-                      <h4>Hizrian</h4>
-                      <p class="text-muted">hello@example.com</p>
+                      <h4>Alfadli Rahmat Putra</h4>
+                      <p class="text-muted">alfadli@gmail.com</p>
                       <a
                         href="profile.html"
                         class="btn btn-xs btn-secondary btn-sm"
-                        >View Profile</a
+                        >Profil</a
                       >
                     </div>
                   </div>
                 </li>
                 <li>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">My Profile</a>
-                  <a class="dropdown-item" href="#">My Balance</a>
-                  <a class="dropdown-item" href="#">Inbox</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Account Setting</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Logout</a>
                 </li>
