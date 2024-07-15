@@ -28,7 +28,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <form action="{{route('account.processRegister') }}" method="post">
+                            <form action="{{route('intern.processRegister') }}" method="post">
                                 @csrf
                                 <div class="row gy-3 overflow-hidden">
                                     <div class="col-12">
@@ -42,15 +42,13 @@
                                             @enderror
                                         </div>
                                     </div>
+                                    
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
-                                            <input type="text" value="{{old('email')}}"
-                                                class="form-control @error('email') is-invalid @enderror" name="email"
-                                                id="email" placeholder="name@example.com">
-                                            <label for="email" class="form-label">Email</label>
-                                            @error('email')
-                                            <p class="invalid-feedback">{{$message}}</p>
-                                            @enderror
+                                            <input type="text"
+                                                class="form-control form-control "
+                                                name="id_pengguna" id="id_pengguna" value="" placeholder="id_pengguna">
+                                            <label for="id_pengguna" class="form-label">id_pengguna</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -84,7 +82,7 @@
                                 <div class="col-12">
                                     <hr class="mt-5 mb-4 border-secondary-subtle">
                                     <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-center">
-                                        <a href="{{route('account.login')}}"
+                                        <a href="{{route('intern.login')}}"
                                             class="link-secondary text-decoration-none">Click here to login</a>
                                     </div>
                                 </div>

@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('interns', function (Blueprint $table) {
             $table->id();
-            $table->string('id_pengguna', 10);
+            $table->string('nim', 10);
             $table->string('nama', 40);
-            $table->string('nim', 40);
             $table->string('no_handphone', 15);
             $table->string('kampus', 255);
             $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
@@ -24,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Define the foreign key constraint
-            $table->foreign('id_pengguna')->references('id_pengguna')->on('users')->onDelete('cascade');
+            $table->foreign('nim')->references('id_pengguna')->on('users')->onDelete('cascade');
         });
     }
 

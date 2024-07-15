@@ -21,17 +21,17 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email',
+            'id_pengguna' => 'required',
             'password' => 'required'
         ]);
         if ($validator->passes()) {
-            if (Auth::attempt((['email' => $request->email, 'password' => $request->password]))) {
-                return redirect()->route('account.dashboard');
+            if (Auth::attempt((['id_pengguna' => $request->id_pengguna, 'password' => $request->password]))) {
+                return redirect()->route('intern.dashboard');
             } else {
-                return redirect()->route('account.login')->withErrors(['error' => 'Either email or password is incorrect.']);
+                return redirect()->route('intern.login')->withErrors(['error' => 'Either id_pengguna or password is incorrect.']);
             }
         } else {
-            return redirect()->route('account.login')->withInput()->withErrors($validator);
+            return redirect()->route('intern.login')->withInput()->withErrors($validator);
         }
     }
     public function register()
@@ -41,27 +41,27 @@ class LoginController extends Controller
     public function processRegister(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email|unique:users',
+            'id_pengguna' => 'required|unique:users',
             'password' => 'required|confirmed|min:5',
             'name' => 'required',
             'password_confirmation' => 'required',
         ]);
         if ($validator->passes()) {
             $user = new User();
-            $user->name = $request->name;
-            $user->email = $request->email;
+            $user->nama = $request->name;
+            $user->id_pengguna = $request->id_pengguna;
             $user->password = Hash::make($request->password);
-            $user->role = 'customer';
+            $user->role = 'intern';
             $user->save();
 
-            return redirect()->route('account.login')->with('success', 'you have registered successfully');
+            return redirect()->route('intern.login')->with('success', 'you have registered successfully');
         } else {
-            return redirect()->route('account.register')->withInput()->withErrors($validator);
+            return redirect()->route('intern.register')->withInput()->withErrors($validator);
         }
     }
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('account.login');
+        return redirect()->route('intern.login');
     }
 }

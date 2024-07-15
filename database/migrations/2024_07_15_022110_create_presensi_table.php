@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('presensi', function (Blueprint $table) {
             $table->id();
-            $table->string('id_pengguna', 10);
+            $table->string('nim', 10);
             $table->date('tanggal_masuk');
             $table->time('jam_masuk');
             $table->string('foto_masuk', 255);
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Define the foreign key constraint
-            $table->foreign('id_pengguna')->references('id_pengguna')->on('users')->onDelete('cascade');
+            $table->foreign('nim')->references('id_pengguna')->on('users')->onDelete('cascade');
         });
     }
 

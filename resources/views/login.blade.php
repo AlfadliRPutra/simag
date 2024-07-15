@@ -30,17 +30,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <form action="{{ route('account.authenticate') }}" method="post">
+                            <form action="{{ route('intern.authenticate') }}" method="post">
                                 @csrf
                                 <div class="row gy-3 overflow-hidden">
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
-                                            <input type="text" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="name@example.com">
-                                            <label for="email" class="form-label">Email</label>
-                                            @error('email')
-                                            <p class="invalid-feedback">{{$message}}
-                                            </p>
-                                            @enderror
+                                            <input type="text" value="" class="form-control " name="id_pengguna" id="id_pengguna" placeholder="name@example.com">
+                                            <label for="id_pengguna" class="form-label">id_pengguna</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -66,7 +62,7 @@
                                 <div class="col-12">
                                     <hr class="mt-5 mb-4 border-secondary-subtle">
                                     <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-center">
-                                        <a href="{{route('account.register')}}" class=" link-secondary
+                                        <a href="{{route('intern.register')}}" class=" link-secondary
                                             text-decoration-none">Create new account</a>
                                     </div>
                                 </div>

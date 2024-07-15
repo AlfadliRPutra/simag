@@ -26,22 +26,22 @@ Route::get('/admin/today', function () {
     return view('admin.presensi.today');
 });
 
-Route::get('/intern', function () {
-    return view('intern.dashboard');
-});
+// Route::get('/intern', function () {
+//     return view('intern.dashboard');
+// });
 
-Route::group(['prefix' => 'account'], function () {
+Route::group(['prefix' => 'intern'], function () {
     // Guest Middleware
     Route::group(['middleware' => 'guest'], function () {
-        Route::get('/login', [InternLoginController::class, 'index'])->name('account.login');
-        Route::get('/register', [InternLoginController::class, 'register'])->name('account.register');
-        Route::post('/process-register', [InternLoginController::class, 'processRegister'])->name('account.processRegister');
-        Route::post('/authenticate', [InternLoginController::class, 'authenticate'])->name('account.authenticate');
+        Route::get('/login', [InternLoginController::class, 'index'])->name('intern.login');
+        Route::get('/register', [InternLoginController::class, 'register'])->name('intern.register');
+        Route::post('/process-register', [InternLoginController::class, 'processRegister'])->name('intern.processRegister');
+        Route::post('/authenticate', [InternLoginController::class, 'authenticate'])->name('intern.authenticate');
     });
     // Authenticated MiddleWare
     Route::group(['middleware' => 'auth'], function () {
-        Route::get('/logout', [InternLoginController::class, 'logout'])->name('account.logout');
-        Route::get('/dashboard', [InternDashboardController::class, 'index'])->name('account.dashboard');
+        Route::get('/logout', [InternLoginController::class, 'logout'])->name('intern.logout');
+        Route::get('/dashboard', [InternDashboardController::class, 'index'])->name('intern.dashboard');
     });
 });
 
